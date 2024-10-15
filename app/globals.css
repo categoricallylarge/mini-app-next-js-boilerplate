@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Set input font size to 16px to prevent zoom */
+input, textarea, select {
+  font-size: 16px;
+}
+
+/* Optional: Fix for full width on iOS safari */
+input[type="text"] {
+  width: 100%;
+  -webkit-appearance: none;
+}
+
+/* Prevent focus scaling on input */
+body {
+  touch-action: manipulation;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+input, textarea {
+  outline: none;
+  -webkit-text-size-adjust: 100%; /* Prevent text scaling */
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+::-webkit-scrollbar {
+width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+@apply bg-slate-800/20 rounded-2xl z-[100]
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+@apply bg-[#8667D2] rounded-full cursor-pointer  z-[100]
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+@apply bg-[#BAA2F3] cursor-pointer
+}
+
+p, h1, h2, h3, h4, h5 {
+  font-family: "Outfit";
+}
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('../public/fonts/outfit/Outfit-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Outfit';
+  src: url('../public/fonts/outfit/Outfit-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('../public/fonts/outfit/Outfit-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Outfit';
+  src: url('../public/fonts/outfit/Outfit-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('../public/fonts/outfit/Outfit-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('../public/fonts/outfit/Outfit-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}

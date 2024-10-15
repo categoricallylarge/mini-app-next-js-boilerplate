@@ -1,0 +1,49 @@
+{
+  "name": "mini-app-next-js-boilerplate",
+  "version": "0.0.1",
+  "keywords": [
+    "next.js",
+    "farcaster",
+    "composer action",
+    "categorically large",
+    "large",
+    "mini-apps"
+  ],
+  "description": "A sample boilerplate repo to demonstrate how to setup a Farcaster Mini App using Next.js",
+  "license": "MIT",
+  "author": "Categorically Large Team <categoricallylarge@gmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@farcaster/auth-kit": "^0.6.0",
+    "@headlessui/react": "^2.1.2",
+    "@heroicons/react": "^2.1.5",
+    "@neynar/nodejs-sdk": "^1.43.1",
+    "axios": "^1.7.7",
+    "crypto-js": "^4.2.0",
+    "next": "14.2.7",
+    "next-auth": "^4.24.7",
+    "react": "^18",
+    "react-dom": "^18",
+    "tailwind-merge": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
+    "@types/node": "^20",
+    "@types/qrcode-terminal": "^0.12.2",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "dotenv": "^16.4.5",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.7",
+    "postcss": "^8",
+    "qrcode-terminal": "^0.12.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
