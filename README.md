@@ -105,7 +105,7 @@ This boilerplate is a simple example of how to create a Farcaster Mini App as qu
 
 ### Youtube link
 
-[![Youtube embed](https://img.youtube.com/vi/4xqjSm1nkWw/0.jpg)](https://www.youtube.com/watch?v=4xqjSm1nkWw)
+[![Youtube embed](https://img.youtube.com/vi/QVqrExzVPyI/0.jpg)](https://www.youtube.com/watch?v=QVqrExzVPyI)
 
 ---
 
