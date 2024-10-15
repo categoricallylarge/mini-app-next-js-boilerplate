@@ -27,6 +27,8 @@ const UserContextProvider = ({ children }: ProviderProps) => {
     const fetchUser = async () => {
         //NOTE - fetch the user from your database
         // for this example we will use the details from the session provided by our nextAuth
+        
+        // Or - before returning session from [...nextAuth] - you can fetch your user data from a DB and assign it to the session
 
         setUserProfile({
             fid: session?.user.fid!,

@@ -38,6 +38,7 @@ export default function SIFC({ }: Props) {
 
         try {
             // Call the farcasterQR method in auth/[...nextAuth]
+            // From the QR code scan - we must pass the message and signature - for validation in [...nextAuth]
             const result = await signIn("farcasterQR", {
                 message: data.message,
                 signature: data.signature,
@@ -93,6 +94,7 @@ export default function SIFC({ }: Props) {
                         <span className="absolute -inset-1.5" />
                         <span className="sr-only">Open user menu</span>
                         <div className='min-w-[36px] w-[36px] h-[36px]  bg-zinc-500 aspect-square rounded-full  ' >
+                            {/* NOTE - you can use session or userProfile from the userContext - both are the same */}
                             {session.user?.pfpUrl &&
                                 <Image
                                     src={session.user?.pfpUrl}
