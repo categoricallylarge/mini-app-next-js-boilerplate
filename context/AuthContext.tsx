@@ -52,6 +52,7 @@ const AuthContextProvider = ({ children }: ProviderProps) => {
         try {
             const csrfToken = await getCsrfToken()
             // Call the miniApp method in auth/[...nextAuth]
+            // Pass in the detected key from the url params
             const result = await signIn("miniApp", {
                 key,
                 csrfToken,
