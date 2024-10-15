@@ -52,7 +52,7 @@ NEXTAUTH_SECRET=760...
 # Neynar API key (get one at https://neynar.com/)
 NEYNAR_API_KEY=NEYNAR_API_DOCS
 
-# Next.js environment  (Only effects logging atm)
+# Next.js environment  (Only effects logging at the moment)
 NEXT_PUBLIC_ENVIRONMENT=development
 
 # Auth encryption key (generate a new one for production)
