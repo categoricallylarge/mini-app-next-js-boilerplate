@@ -125,6 +125,14 @@ In the Composer Action Playground, don't forget to add `/api/launcher` at the en
 
 ---
 
+**Live Demo**
+
+You can view a sample demo [here](https://warpcast.com/~/developers/composer-actions?postUrl=https%3A%2F%2Fmini-app-next-js-boilerplate.vercel.app%2Fapi%2Flauncher) to see how this boilerplate works with a Farcaster client infrastructure using an embedded web view.
+
+You can also test out the QR Code login method by going to the live domain [here](https://mini-app-next-js-boilerplate.vercel.app)
+
+---
+
 ### Mini App Launch Flow
 
 When your Mini App is triggered by a Farcaster client, it calls the `api/launcher` route with an authenticated post request from the user.
@@ -180,13 +188,6 @@ The user will need to authenticate using a QR code. The user is directed to the 
 
 This method is similar to the previous one but instead of using `validateFrameAction`, it uses the `verifySignInMessage` method from the Neynar SDK, as it receives a `message` and `signature` from the QR code data, and verifies their authenticity.
 
----
-
-**Live Demo**
-
-You can view a sample demo [here](https://warpcast.com/~/developers/composer-actions?postUrl=https%3A%2F%2Fmini-app-next-js-boilerplate.vercel.app%2Fapi%2Flauncher) to see how this boilerplate works with a Farcaster client infrastructure using an embedded web view.
-
-You can also test out the QR Code login method by going to the live domain [here](https://mini-app-next-js-boilerplate.vercel.app)
 
 ---
 
