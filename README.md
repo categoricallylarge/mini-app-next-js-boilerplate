@@ -40,6 +40,8 @@
 
 Set up your `.env.local` file with the correct environment variables.
 
+You will need to set up your ngrok server first
+
 ```
 # ngrok url [https://ngrok.com/]
 NEXT_PUBLIC_URL=
@@ -97,9 +99,9 @@ When accessed from a Farcaster client, Mini Apps can currently access the follow
 
 This boilerplate is a simple example of how to create a Farcaster Mini App as quickly as possible.
 
-- Mini apps can be built with any web framework, but for this example we will use Next.js
-- We will use NextAuth for managing authentication credentials
-- We will create an api route to handle launching the mini app and authenticating users from a Farcaster client
+- Mini apps can be built with any web framework, but for this example we will use `Next.js`
+- We will use `NextAuth` for managing authentication credentials
+- We will create an `launcher api` route to handle launching the mini app and authenticating users from a Farcaster client
 - We will handle the session state for the mini app with NextAuth session and custom session provider
 - We will use the `createCast` method to create a new cast intent from within the mini app
 
@@ -119,7 +121,7 @@ Test your Mini App to ensure it works with Farcaster:
 
 **Mobile:** <https://recaster.org> **Desktop:** [https://warpcast.com/\\\~/developers/composer-actions](https://warpcast.com/%5C~/developers/composer-actions)
 
-In the Composer Action Playground, don't forget to add `/api/launcher` at the end of the Post URL, like in the example below:
+The dev tool provided by warpcast is called the "Composer Action Playground", don't forget to add `/api/launcher` at the end of the Post URL to call the correct route, like in the example below:
 
 <https://www.yourUrl.xyz/api/launcher>
 
