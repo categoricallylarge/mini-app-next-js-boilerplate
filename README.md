@@ -40,7 +40,7 @@
 
 Set up your `.env.local` file with the correct environment variables.
 
-You will need to set up your ngrok server first
+You will need to start up your ngrok server for your `NEXT_PUBLIC_URL`& provide a Neynar API key, but the other values are fine for testing.
 
 ```
 # ngrok url [https://ngrok.com/]
@@ -92,7 +92,7 @@ Farcaster Mini Apps are web apps that can be embedded into any Farcaster client.
 
 When accessed from a Farcaster client, Mini Apps can currently access the following features:
 
-- Magic link style authentication - handled via `api/launncher` & `AuthContext`
+- Magic link style authentication - handled via `api/launcher` & `AuthContext`
 - Create Cast intent - share frames, contextual information, etc `
 - Deeplinking - easily prompt Mini app from feed, dms, external shares etc
 - Transactions - **COMING SOON** - prompt transactions from within the mini app
@@ -135,7 +135,7 @@ You can also test out the QR Code login method by going to the live domain [here
 
 ---
 
-### Mini App Launch Flow
+### Mini App Launch & Auth Flow
 
 When your Mini App is triggered by a Farcaster client, it calls the `api/launcher` route with an authenticated post request from the user.
 
@@ -177,6 +177,72 @@ In `[...nextAuth]/authOptions`, we first use the correct `CredentialsProvider` b
 Using the `key`, we `validateFrameAction` which on success retrieves the user. With this user data, we construct a user object that can safely be passed to the frontend via `session`.
 
 Additionally, we return `cipheredParams`, an encrypted user object that communicates with the backend securely to prevent injection attacks.
+
+---
+
+## Mini App features
+
+### Create a Cast from within a Mini App
+
+To create a cast for a user from within a Mini app we use the `createCast` postMessage within our `FarcasterShare` component.
+
+This lets us reuse a share button anywhere and pass through `message` and `embed` params each time.
+
+```
+    <FarcasterShare 
+      message="hey @dwr.eth just letting you know I am building /miniapps for farcaster" 
+      embeds={[process.env.NEXT_PUBLIC_URL || ""]}>
+      <span className="text-white">Share on Farcaster</span>
+    </FarcasterShare>
+```
+
+Since all of our Mini apps can also be accessed directly via web, we want to handle Shares for both
+
+So depending on the `isMini` value, which is set when launched as a Mini App - we will either use a `cast intent link` (web) or a `createCast post message` (MiniApp)
+
+The same thinking will be relevent for handling things like transaction data in the future
+
+```
+export default function FarcasterShare({ message, embeds, customClass, children }: ShareButtonProps) {
+    const { isMini } = useAuthContext()
+
+    const encodedText = encodeURIComponent(message)
+    const embedURL = encodeURIComponent(embeds?.[0] || "")
+
+    const shareCast = async () => {
+        window.parent.postMessage({
+            type: "createCast",
+            data: {
+                cast: {
+                    parent: "0x",
+                    text: message,
+                    embeds: embeds || [""]
+                }
+            }
+        }, "*")
+    }
+
+  ...(abbreviated for brevity)
+
+    return (
+        <>
+            {!isMini ? (
+                <Link href={`https://warpcast.com/~/compose?text=${encodedText}&embeds[]=${embedURL}`} target="_blank" className={`${customClass || shareButton}`}>
+                    {buttonContent}
+                </Link>
+            ) : (
+                <button className={`${customClass || shareButton}`} onClick={shareCast}>
+                    {buttonContent}
+                </button>
+            )}
+        </>
+    )
+
+
+```
+
+
+### Prompt a transacaction from within a Mini App **COMING SOON**
 
 ---
 
