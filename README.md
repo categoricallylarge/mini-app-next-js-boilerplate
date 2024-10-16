@@ -86,14 +86,14 @@ This will display a QR code that you can scan with Recaster (mobile) or open in 
 
 ### Overview
 
-In this demo boilerplate, we will discuss how to set up a basic flow to allow Mini Apps (composer actions) to work with Next.js NextAuth system. We will refer to the composer actions as Mini Apps.
+In this demo boilerplate, we will get a farcaster Mini app running as fast as possible.
 
 Farcaster Mini Apps are web apps that can be embedded into any Farcaster client.
 
 When accessed from a Farcaster client, Mini Apps can currently access the following features:
 
-- Magic link style authentication
-- Create Cast intent - share frames, contextual information, etc
+- Magic link style authentication - handled via `api/launncher` & `AuthContext`
+- Create Cast intent - share frames, contextual information, etc `
 - Deeplinking - easily prompt Mini app from feed, dms, external shares etc
 - Transactions - **COMING SOON** - prompt transactions from within the mini app
 
