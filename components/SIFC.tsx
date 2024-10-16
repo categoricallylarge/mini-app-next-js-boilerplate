@@ -37,8 +37,9 @@ export default function SIFC({ }: Props) {
         if (!data.fid) return
 
         try {
-            // Call the farcasterQR method in auth/[...nextAuth]
+            // Call the 'farcasterQR' method in auth/[...nextAuth]
             // From the QR code scan - we must pass the message and signature - for validation in [...nextAuth]
+            // This is vital to authenticate the user
             const result = await signIn("farcasterQR", {
                 message: data.message,
                 signature: data.signature,
