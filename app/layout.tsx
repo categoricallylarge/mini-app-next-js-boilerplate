@@ -20,11 +20,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {/* //NOTE - here are the initial buttons */}
         <meta property="fc:frame" content="vNext" />
         <meta property="fc:frame:image:aspect_ratio" content="1:1" />
-        <meta name="fc:frame:image" content={`${process.env.NEXT_PUBLIC_URL}/imgUrl.png`} />
-        <meta name="fc:frame:button:1" content="Home" />
-        <meta name="fc:frame:button:1:post_url" content={`${process.env.NEXT_PUBLIC_URL}/api/frame/home`} />
-        <meta name="fc:frame:button:1:action" content="post" />
-        <meta name="fc:frame:button:2" content="Launch Mini App" />
+        <meta name="fc:frame:image" content={`${process.env.NEXT_PUBLIC_URL}/miniappscover.png`} />
+        <meta name="fc:frame:button:1" content="Build" />
+
+        {/* <meta name="fc:frame:button:1:post_url" content={`${process.env.NEXT_PUBLIC_URL}/api/frame/home`} /> */}
+        <meta name="fc:frame:button:1:action" content="link" />
+        <meta name="fc:frame:button:1:target" content="https://github.com/categoricallylarge/mini-app-next-js-boilerplate" />
+        <meta name="fc:frame:button:2" content="Launch (requires approval)" />
         <meta name="fc:frame:button:2:action" content="link" />
         <meta name="fc:frame:button:2:target" content={`https://warpcast.com/~/composer-action?url=https%3A%2F%2F${process.env.NEXT_PUBLIC_URL_SHORT}%2Fapi%2Flauncher`} />
 

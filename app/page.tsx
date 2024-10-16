@@ -17,7 +17,9 @@ export default function Home() {
             <>
               <h1 className="text-xl max-w-xs font-black text-black text-center mt-32">YOU ARE SUCCESSFULLY LOGGED IN</h1>
               <SIFC />
-              <FarcasterShare message="Check out this awesome app!" embeds={[process.env.NEXT_PUBLIC_URL || ""]}>
+              <FarcasterShare 
+                message="hey @dwr.eth just letting you know I am building /miniapps for farcaster using the /large boilerplate" 
+                embeds={[process.env.NEXT_PUBLIC_URL || ""]}>
                 <span className="text-white">Share on Farcaster</span>
               </FarcasterShare>
             </>
